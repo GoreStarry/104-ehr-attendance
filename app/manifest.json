@@ -4,8 +4,8 @@
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
+    "16": "images/chubby.png",
+    "128": "images/chubby.png"
   },
   "default_locale": "en",
   "background": {
@@ -17,7 +17,9 @@
     "https://*/*",
     "topSites",
     "storage",
-    "webNavigation"
+    "webNavigation",
+    "declarativeContent",
+    "activeTab"
   ],
   "options_ui": {
     "page": "options.html",
@@ -25,18 +27,21 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "https://ehrms.tmnewa.com.tw/ehrportal/index/*"
+      ],
       "js": ["scripts/contentscript.js"],
       "run_at": "document_end",
-      "all_frames": false
+      "all_frames": true
     }
   ],
-  "browser_action": {
+  "page_action": {
     "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
+      "19": "images/chubby.png",
+      "38": "images/chubby.png"
     },
-    "default_title": "104 ehr attendance",
     "default_popup": "popup.html"
   }
 }
