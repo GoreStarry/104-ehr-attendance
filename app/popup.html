@@ -9,15 +9,19 @@
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
   <link href="styles/main.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  <link href="styles/chota.min.css" rel="stylesheet">
   <link href="styles/popup/popup_main.css" rel="stylesheet">
   <!-- endbuild -->
 </head>
 
 <body>
-  <img src="images/女秘書.png" alt="">
-  <input id="input-date" type="date">
-  <input id="btn-submit" type="submit">
+  <form id="form" class="container">
+    <img src="images/女秘書.png" alt="">
+    <input id="input-date" type="date" required>
+    <input id="input-start" type="text" pattern="^\d{4}$" title="HHMM" required>
+    <input id="input-end" type="text" pattern="^\d{4}$" title="HHMM" required>
+    <input id="btn-submit" class="button primary" type="submit" value="下班！">
+  </form>
   <!-- build:js scripts/popup-vendor.js -->
   <!-- bower:js -->
   <!-- endbower -->
